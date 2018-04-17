@@ -1,13 +1,41 @@
 require('dotenv').config();
 const fs = require('fs');
-// console.log(process.env.TWITTER_CONSUMER_KEY);
-// const spotify = new Spotify(keys.spotify);
-// // twitter
-// const client = new Twitter(keys.twitter);
-// request;
+const Twitter = require('twitter');
+const Spotify = require('node-spotify-api');
 const request = require('request');
+const action = process.argv[2];
+const keys = require("./key.js");
 
 
+//User based authentication
+// var spotify = new Spotify(keys.spotify);
+var client = new Twitter(keys.twitter);
+
+
+console.log(client);
+
+
+//switch statement for all the possibilities
+switch (action) {
+  case "movie-this":
+    movieThis();
+    break;
+
+  case "spotify-this-song":
+    spotifySong();
+    break;
+
+  case "my-tweets":
+    myTweets();
+    break;
+
+  case "do-what-it-says":
+    readText();
+    break;
+}
+
+//if the movieThis function is called
+function movieThis() {
 // OMDB request
 // Store all of the arguments in an array
 const nodeArgs = process.argv;
@@ -16,13 +44,13 @@ const nodeArgs = process.argv;
 let movieName = '';
 
 //if no argument is specified then use mr. nobody
-if (process.argv[2] == undefined) {
+if (process.argv[3] == undefined) {
   movieName = "mr+nobody";
 } else {
   // Loop through all the words in the node argument
 // And do a little for-loop magic to handle the inclusion of "+"s
-for (let i = 2; i < nodeArgs.length; i++) {
-  if (i > 2 && i < nodeArgs.length) {
+for (let i = 3; i < nodeArgs.length; i++) {
+  if (i > 3 && i < nodeArgs.length) {
     movieName = `${movieName}+${nodeArgs[i]}`;
   } else {
     movieName += nodeArgs[i];
@@ -30,10 +58,6 @@ for (let i = 2; i < nodeArgs.length; i++) {
 }
 
 }
-
-
-
-
 const queryUrl = `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`;
 
 request(queryUrl, (error, response, body) => {
@@ -52,3 +76,16 @@ request(queryUrl, (error, response, body) => {
     
   }
 });
+
+}
+
+function myTweets() {
+
+
+}
+
+function spotifySong() {
+
+
+
+}
