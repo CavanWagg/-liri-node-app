@@ -78,10 +78,16 @@ function movieThis() {
 }
 
 function myTweets() {
-  const params = { screen_name: 'LIRI node App' };
+  const params = {
+    screen_name: 'cavanNode',
+    count: 20,
+  };
   client.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (!error) {
-      console.log(tweets);
+      tweets.forEach((element) => {
+        console.log(element.text);
+        console.log(element.created_at);
+      });
     }
   });
 }
