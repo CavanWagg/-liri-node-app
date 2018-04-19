@@ -4,7 +4,7 @@ const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
 const request = require('request');
 
-const action = process.argv[2];
+const liriCommand = process.argv[2];
 const keys = require('./key.js');
 
 
@@ -12,14 +12,23 @@ const keys = require('./key.js');
 const spotify = new Spotify(keys.spotify);
 const client = new Twitter(keys.twitter);
 
+// take in the command line arguments
+const cmdArgs = process.argv;
+
+// for loop to allow spaces in Liri command
+let liriArg = '';
+for (let i = 3; i < cmdArgs.length; i++) {
+  liriArg += cmdArgs[i] + ' ';
+}
+
 // switch statement for all the possibilities
-switch (action) {
+switch (liriCommand) {
   case 'movie-this':
-    movieThis();
+    movieThis(liriArg);
     break;
 
   case 'spotify-this-song':
-    spotifySong();
+    spotifySong(liriArg);
     break;
 
   case 'my-tweets':
@@ -36,29 +45,18 @@ switch (action) {
 }
 
 // if the movieThis function is called
-function movieThis() {
+function movieThis(movie) {
 // OMDB request
-// Store all of the arguments in an array
-  const nodeArgs = process.argv;
-
-  // Create an empty variable for holding the movie name
-  let movieName = '';
-
   // if no argument is specified then use mr. nobody
-  if (process.argv[3] === undefined) {
-    movieName = 'mr+nobody';
+  let search;
+  if (movie === '') {
+    search = 'mr+nobody';
   } else {
-  // Loop through all the words in the node argument
-    // And do a little for-loop magic to handle the inclusion of "+"s
-    for (let i = 3; i < nodeArgs.length; i++) {
-      if (i > 3 && i < nodeArgs.length) {
-        movieName = `${movieName}+${nodeArgs[i]}`;
-      } else {
-        movieName += nodeArgs[i];
-      }
-    }
+    search = movie;
   }
-  const queryUrl = `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=trilogy`;
+  // Replace spaces with '+' for query string
+  search = search.split(' ').join('+');
+  const queryUrl = `http://www.omdbapi.com/?t=${search}&y=&plot=short&apikey=trilogy`;
 
   request(queryUrl, (error, response, body) => {
   // If the request is successful
@@ -92,27 +90,17 @@ function myTweets() {
   });
 }
 
-function spotifySong() {
-  const nodeArgs = process.argv;
-
+function spotifySong(song) {
   // Create an empty variable for holding the movie name
-  let songSearch = '';
 
   // if no argument is specified then use mr. nobody
-  if (process.argv[3] === undefined) {
-    songSearch = 'the sign';
+  let search;
+  if (song === '') {
+    search = 'The Sign Ace of Base';
   } else {
-  // Loop through all the words in the node argument
-    // And do a little for-loop magic to handle the inclusion of "+"s
-    for (let i = 3; i < nodeArgs.length; i++) {
-      if (i > 3 && i < nodeArgs.length) {
-        songSearch = `${songSearch} ${nodeArgs[i]}`;
-      } else {
-        songSearch += nodeArgs[i];
-      }
-    }
+    search = song;
   }
-  spotify.search({ type: 'track', query: songSearch, limit: 1 }, (err, data) => {
+  spotify.search({ type: 'track', query: search, limit: 1 }, (err, data) => {
     if (err) {
       return console.log(`Error occurred: ${err}`);
     }
@@ -132,12 +120,24 @@ function readText() {
     }
     // Then split it by commas (to make it more readable)
     const dataArr = data.split(',');
-    // let dataArr[0]
+    const command = dataArr[0].trim();
+    const param = dataArr[1].trim();
+
     // let dataArr[1]
+    if (command === 'spotify-this-song') {
+      console.log('you got it');
+      spotifySong(param);
+    } else if (command === 'movie-this') {
+      movieThis(param);
+    } else if (command === 'my-tweets') {
+      myTweets();
+    } else {
+      console.log('I can not perform a command based on reading this txt file');
+    }
 
 
     // We will then re-display the content as an array for later use.
-    console.log(dataArr);
+    { console.log(dataArr); }
   });
 }
 
