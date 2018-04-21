@@ -1,0 +1,111 @@
+*User Command: node liri.js my-tweets
+
+LIRI Response:
+
+RT @SebastianComedy: Mid cold cut at the deli. https://t.co/fgz3B6cG2T
+        Thu Apr 19 13:01:45 +0000 2018LIRI Response:
+
+RT @SebastianComedy: If you feel the need to talk the entire @Uber ride, I have a few words for you. https://t.co/6yhLAEOZ5P
+        Thu Apr 19 13:00:50 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Tag someone who needs to rethink their shower strategy. https://t.co/0aTNvvcFcP
+        Thu Apr 19 13:03:05 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Who actually talks to strangers at the pool? https://t.co/G8q4vquch2
+        Thu Apr 19 13:00:34 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Share this with an Italian friend. https://t.co/EvYxGdJBIo
+        Thu Apr 19 13:00:14 +0000 2018LIRI Response:
+
+RT @realDonaldTrump: Mike Pompeo met with Kim Jong Un in North Korea last week. Meeting went very smoothly and a good relationship was form…
+        Thu Apr 19 12:56:21 +0000 2018LIRI Response:
+
+RT @CutPics: I want someone to look at me like this guy looks at this onion. https://t.co/AnKd9UtGhj
+        Thu Apr 19 12:53:43 +0000 2018LIRI Response:
+
+RT @CutPics: Spot the difference. https://t.co/eY2oN6iVOH
+        Thu Apr 19 12:53:03 +0000 2018LIRI Response:
+
+RT @Oceana: If at first you don't succeed, try, try again. #MotivationMonday https://t.co/jqsnYffkz0
+        Mon Apr 16 21:11:33 +0000 2018LIRI Response:
+
+RT @JohnMcGrathMB: We Choose our Mindset.
+All Growth comes with 
+a Growth Mindset.
+
+#MotivationMonday
+#Inspiration #Believe #Faith https://…
+        Mon Apr 16 21:11:11 +0000 2018LIRI Response:
+
+Sweet spring, full of sweet days and roses, a box where sweets compacted lie.
+-George Herbert
+        Mon Apr 16 21:07:35 +0000 2018LIRI Response:
+
+Just setting up my Twitter. #myfirstTweet
+        Mon Apr 16 21:05:39 +0000 2018*User Command: node liri.js spotify-this-song 
+
+LIRI Response:
+
+Artists: "Ace of Base"
+    Song: "The Sign"
+    Preview link: "https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=9bb70f92b6b246eb954c8602e0e5854c"
+    Album: "The Sign (US Album) [Remastered]"*User Command: node liri.js do-what-it-says
+
+*User Command: node liri.js my-tweets
+
+LIRI Response:
+
+RT @SebastianComedy: Tag someone who needs to rethink their shower strategy. https://t.co/0aTNvvcFcP
+        Thu Apr 19 13:03:05 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Mid cold cut at the deli. https://t.co/fgz3B6cG2T
+        Thu Apr 19 13:01:45 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Who actually talks to strangers at the pool? https://t.co/G8q4vquch2
+        Thu Apr 19 13:00:34 +0000 2018LIRI Response:
+
+RT @SebastianComedy: Share this with an Italian friend. https://t.co/EvYxGdJBIo
+        Thu Apr 19 13:00:14 +0000 2018LIRI Response:
+
+RT @SebastianComedy: If you feel the need to talk the entire @Uber ride, I have a few words for you. https://t.co/6yhLAEOZ5P
+        Thu Apr 19 13:00:50 +0000 2018LIRI Response:
+
+RT @realDonaldTrump: Mike Pompeo met with Kim Jong Un in North Korea last week. Meeting went very smoothly and a good relationship was form…
+        Thu Apr 19 12:56:21 +0000 2018LIRI Response:
+
+RT @CutPics: I want someone to look at me like this guy looks at this onion. https://t.co/AnKd9UtGhj
+        Thu Apr 19 12:53:43 +0000 2018LIRI Response:
+
+RT @CutPics: Spot the difference. https://t.co/eY2oN6iVOH
+        Thu Apr 19 12:53:03 +0000 2018LIRI Response:
+
+RT @Oceana: If at first you don't succeed, try, try again. #MotivationMonday https://t.co/jqsnYffkz0
+        Mon Apr 16 21:11:33 +0000 2018LIRI Response:
+
+RT @JohnMcGrathMB: We Choose our Mindset.
+All Growth comes with 
+a Growth Mindset.
+
+#MotivationMonday
+#Inspiration #Believe #Faith https://…
+        Mon Apr 16 21:11:11 +0000 2018LIRI Response:
+
+Sweet spring, full of sweet days and roses, a box where sweets compacted lie.
+-George Herbert
+        Mon Apr 16 21:07:35 +0000 2018LIRI Response:
+
+Just setting up my Twitter. #myfirstTweet
+        Mon Apr 16 21:05:39 +0000 2018*User Command: node liri.js do-what-it-says
+
+*User Command: node liri.js movie-this Batman Begins
+
+LIRI Response:
+Title: Batman Begins
+      Release Year: 2005
+      IMDB Rating: 8.3/10
+      Rotten Tomatoes Rating: 84%
+      Produced in: USA, UK
+      Language: English, Urdu, Mandarin
+      Main plot: After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.
+      Actors: Christian Bale, Michael Caine, Liam Neeson, Katie Holmes
+
